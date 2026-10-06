@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.solid {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.solid:hover {
+  opacity: 0.9;
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+.outline:hover {
+  background-color: var(--accent);
+  color: #fff;
+}

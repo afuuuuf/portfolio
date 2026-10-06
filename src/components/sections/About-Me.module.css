@@ -1,0 +1,23 @@
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.tags li {
+  background: var(--surface);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+}
