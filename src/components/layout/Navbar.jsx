@@ -1,38 +1,19 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const NAV_ITEMS = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
 ];
 
 export default function Navbar() {
-  const [activeId, setActiveId] = useState("home");
+  const location = useLocation();
   const linkRefs = useRef({});
   const [indicatorStyle, setIndicatorStyle] = useState({});
 
   useEffect(() => {
-    const sections = NAV_ITEMS.map((item) =>
-      document.getElementById(item.id),
-    ).filter(Boolean);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-50% 0px -50% 0px" },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const activeLink = linkRefs.current[activeId];
+    const activeLink = linkRefs.current[location.pathname];
     if (activeLink) {
       setIndicatorStyle({
         width: activeLink.offsetWidth,
@@ -41,25 +22,28 @@ export default function Navbar() {
         top: activeLink.offsetTop,
       });
     }
-  }, [activeId]);
+  }, [location.pathname]);
 
   return (
     <header className={styles.navbar}>
-      <a href="#home" className={styles.logo}>
+      <Link to="/" className={styles.logo}>
         Wan Afif
-      </a>
+      </Link>
 
       <nav className={styles.links}>
         <span className={styles.indicator} style={indicatorStyle} />
         {NAV_ITEMS.map((item) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            ref={(el) => (linkRefs.current[item.id] = el)}
-            className={`${styles.link} ${activeId === item.id ? styles.active : ""}`}
+          <NavLink
+            key={item.path}
+            to={item.path}
+            end={item.path === "/"}
+            ref={(el) => (linkRefs.current[item.path] = el)}
+            className={({ isActive }) =>
+              `${styles.link} ${isActive ? styles.active : ""}`
+            }
           >
             {item.label}
-          </a>
+          </NavLink>
         ))}
       </nav>
     </header>
