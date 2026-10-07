@@ -1,0 +1,27 @@
+.workSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.workSection + .workSection {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+}
+
+.workPosition {
+  flex: 0 0 220px;
+}
+
+.workDescription {
+  flex: 1;
+}
+
+@media (max-width: 700px) {
+  .workSection {
+    flex-direction: column;
+  }
+}
