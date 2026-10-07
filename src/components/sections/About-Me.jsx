@@ -7,7 +7,8 @@ export default function AboutMe() {
 
   return (
     <section id="about" className={`container ${styles.about}`}>
-      <h2 className={styles.heading}>About Me</h2>
+      <h2 className={styles.heading}>Hi, I'm</h2>
+      <h1 className={styles.name}>{profileData.name}</h1>
 
       {about.map((text, i) => (
         <p key={i}>{text}</p>
@@ -22,8 +23,6 @@ export default function AboutMe() {
           <li key={item}>{item}</li>
         ))}
       </ul>
-
-      <Button href={socialLinks.email}>Contact Me</Button>
     </section>
   );
 }

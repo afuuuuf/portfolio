@@ -3,6 +3,12 @@
   margin-bottom: 1.5rem;
 }
 
+.about h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
 .about p {
   margin-bottom: 1rem;
   color: var(--muted);
