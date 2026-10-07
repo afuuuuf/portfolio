@@ -5,6 +5,7 @@ import styles from "./Navbar.module.css";
 const NAV_ITEMS = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
+  { path: "/work", label: "Work" },
 ];
 
 export default function Navbar() {
