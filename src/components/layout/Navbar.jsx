@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { path: "/about", label: "About" },
   { path: "/work", label: "Work" },
   { path: "/projects", label: "Projects" },
+  { path: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
