@@ -1,31 +1,18 @@
 import styles from "./Contact.module.css";
+import SocialIcons from "../common/SocialIcons";
 import { profileData } from "../../data/profile";
 
 const { github, linkedin, email } = profileData.socialLinks;
 
-const socialIcons = {
-  Github: (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.97 10.97 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.68.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-    </svg>
-  ),
-  LinkedIn: (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z" />
-    </svg>
-  ),
-  Email: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-10 6L2 7" />
-    </svg>
-  ),
-};
-
 const contacts = [
-  { label: "Github", value: "afuuuuf", href: github },
-  { label: "Email", value: "wnafif02@gmail.com", href: email },
-  { label: "LinkedIn", value: "Wan Afif", href: linkedin },
+  { platform: "github", label: "GitHub", handle: "afuuuuf", href: github },
+  {
+    platform: "linkedin",
+    label: "LinkedIn",
+    handle: "Wan Afif",
+    href: linkedin,
+  },
+  { platform: "email", label: "Email", handle: "wnafif02@gmail.com", href: email },
 ];
 
 export default function Contact() {
@@ -37,17 +24,20 @@ export default function Contact() {
         email or connect with me on LinkedIn.
       </p>
       <div className={styles.contactCards}>
-        {contacts.map(({ label, value, href }) => (
+        {contacts.map(({ platform, label, handle, href }) => (
           <a
-            key={label}
+            key={platform}
             href={href}
             className={styles.contactCard}
+            aria-label={`${handle} on ${label}`}
             target={href.startsWith("mailto:") ? undefined : "_blank"}
             rel="noopener noreferrer"
           >
-            <span className={styles.icon}>{socialIcons[label]}</span>
+            <span className={styles.icon}>
+              <SocialIcons name={platform} />
+            </span>
             <h3>{label}</h3>
-            <p>{value}</p>
+            <p>{handle}</p>
           </a>
         ))}
       </div>
