@@ -1,0 +1,61 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* A single viewport-height block for the first section feels centered;
+     with a second section below it, drop the full-height so the page
+     scrolls naturally instead of stacking two full screens. */
+  min-height: calc(70vh - 3rem);
+  padding: 4rem 3rem;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+}
+
+/* Constrain the carousel so the single card sits centered, not edge-to-edge */
+.carousel {
+  width: 100%;
+  max-width: 720px;
+}
+
+.card {
+  text-align: left;
+  background: var(--surface);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 0 0.25rem;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.issuer {
+  color: var(--muted);
+}
+
+.technologies {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+}
+
+.technologies li {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
