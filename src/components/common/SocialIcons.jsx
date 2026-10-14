@@ -1,17 +1,14 @@
-import {
-  FaGithub,
-  FaLinkedinIn,
-  FaFileDownload,
-  FaArrowRight,
-} from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaArrowRight } from "react-icons/fa";
+import { FaEnvelope, FaLocationDot } from "react-icons/fa6";
+import { FiDownload } from "react-icons/fi";
 
 const icons = {
   github: FaGithub,
   linkedin: FaLinkedinIn,
   email: FaEnvelope,
-  download: FaFileDownload,
+  download: FiDownload,
   rightArrow: FaArrowRight,
+  location: FaLocationDot,
 };
 
 export default function SocialIcons({ name }) {
