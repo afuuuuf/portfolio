@@ -1,6 +1,9 @@
 .heading {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  font-family: "Archivo", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  text-transform: uppercase;
 }
 
 .about h1 {

@@ -1,9 +1,9 @@
-import AboutMe from "../components/sections/About-Me";
+import AboutSection from "../components/sections/About";
 
 export default function About() {
   return (
     <>
-      <AboutMe />
+      <AboutSection />
     </>
   );
 }

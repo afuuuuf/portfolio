@@ -1,13 +1,13 @@
 import { profileData } from "../../data/profile";
 import Button from "../common/Button";
-import styles from "./About-Me.module.css";
+import styles from "./About.module.css";
 
-export default function AboutMe() {
+export default function About() {
   const { about, highlights, location, socialLinks } = profileData;
 
   return (
     <section id="about" className={`container ${styles.about}`}>
-      <h2 className={styles.heading}>Hi, I'm</h2>
+      <p className={styles.heading}>More About Me</p>
       <h1 className={styles.name}>{profileData.name}</h1>
 
       {about.map((text, i) => (
