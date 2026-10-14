@@ -3,6 +3,7 @@ export const profileData = {
   role: "Full Stack Engineer",
   tagline: "I build clean, fast, and accessible web applications.",
   location: "Selangor, Malaysia",
+  timeZone: "Asia/Kuala_Lumpur",
   about: [
     "I am a passionate Full Stack Engineer with a strong background in web development. I specialize in building scalable and efficient web applications using modern technologies. My goal is to create user-friendly experiences while ensuring optimal performance and accessibility.",
     "I have experience working with various programming languages and frameworks, including JavaScript, React, Node.js, and Python. I enjoy collaborating with cross-functional teams to deliver high-quality software solutions that meet business objectives.",

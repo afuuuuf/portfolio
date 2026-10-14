@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import SocialIcons from "../common/SocialIcons";
 
 const NAV_ITEMS = [
   { path: "/", label: "Home" },
@@ -20,9 +21,8 @@ export default function Navbar() {
     if (activeLink) {
       setIndicatorStyle({
         width: activeLink.offsetWidth,
-        height: activeLink.offsetHeight,
         left: activeLink.offsetLeft,
-        top: activeLink.offsetTop,
+        top: 0, // line anchored to top of the nav pill
       });
     }
   }, [location.pathname]);
@@ -49,6 +49,11 @@ export default function Navbar() {
           </NavLink>
         ))}
       </nav>
+
+      <Link to="/contact" className={styles.ctc}>
+        Let's Connect
+        <SocialIcons name="rightArrow" />
+      </Link>
     </header>
   );
 }
