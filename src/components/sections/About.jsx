@@ -1,8 +1,9 @@
 import { profileData } from "../../data/profile";
 import styles from "./About.module.css";
+import TechIcons from "../common/TechIcons";
 
 export default function About() {
-  const { shortName, about, highlights, location } = profileData;
+  const { shortName, about } = profileData;
 
   return (
     <section id="about" className={`container ${styles.about}`}>
@@ -13,11 +14,7 @@ export default function About() {
         <p key={i}>{text}</p>
       ))}
 
-      <ul className={styles.tags}>
-        {highlights.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
+      <TechIcons />
     </section>
   );
 }
