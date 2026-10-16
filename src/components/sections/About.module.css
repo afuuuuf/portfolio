@@ -1,0 +1,279 @@
+/* Intro */
+.heading {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family:
+    "Archivo", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.about h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.about p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  text-align: justify;
+}
+
+/* Work Experience */
+.expHeader {
+  padding: 4rem 1.25rem 0;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.expAccent {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.expTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.workExperiences {
+  position: relative;
+}
+
+.workExperience {
+  display: grid;
+  grid-template-columns: 30% 2rem 1fr;
+  column-gap: 3rem;
+  align-items: start;
+  padding: 3rem 1.25rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  background: var(--surface);
+  padding: 4px;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.company h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* Job Information */
+.jobInformation {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.dates {
+  font-family:
+    "Archivo", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.duration {
+  font-family:
+    "Archivo", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Job Description */
+.jobDescription {
+  min-width: 0;
+}
+
+.role {
+  font-family:
+    "Archivo", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.jobDescription ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  text-align: justify;
+}
+
+.jobDescription li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.jobDescription li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  opacity: 0.55;
+}
+
+.techStacks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.techStack {
+  margin-top: 1.5rem;
+  font-family:
+    "Archivo", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techItem {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 400;
+  padding: 0.35rem 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+  border-radius: 2px;
+  color: var(--muted);
+}
+
+.techItem svg {
+  font-size: 0.8rem;
+}
+
+/* Vertical Line */
+.spineWrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30%;
+  width: 2rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.spineTrack {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  border-radius: 6px;
+  background: rgba(226, 232, 240, 0.14);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.spineFill {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  transform-origin: top;
+  transform: scaleY(0);
+  background: linear-gradient(to bottom, #e879f9 0%, #a78bfa 45%, #60a5fa 100%);
+  will-change: transform;
+}
+
+.spinePhoto {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  will-change: transform;
+}
+
+.spinePhotoInner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--bg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  transform: translateX(-50%);
+}
+
+.spinePhotoInner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .workExperience {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .jobInformation {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .indent {
+    display: none;
+  }
+
+  .spineWrap {
+    left: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spineWrap {
+    display: none;
+  }
+}
