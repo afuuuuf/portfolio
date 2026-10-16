@@ -2,6 +2,7 @@ import styles from "./ProjectShowcase.module.css";
 import Carousel from "../common/Carousel";
 import { projectData } from "../../data/project";
 import { certsData } from "../../data/certs";
+import { getImages, getPdf } from "../../utils/file";
 
 export default function ProjectShowcase() {
   return (
@@ -12,7 +13,10 @@ export default function ProjectShowcase() {
           <Carousel>
             {projectData.map((project) => (
               <article key={project.title} className={styles.card}>
-                <img src={project.image} alt={`${project.title} screenshot`} />
+                <img
+                  src={getImages(project.image)}
+                  alt={`${project.title} screenshot`}
+                />
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <ul className={styles.technologies}>
@@ -32,7 +36,19 @@ export default function ProjectShowcase() {
           <Carousel>
             {certsData.map((cert) => (
               <article key={cert.title} className={styles.card}>
-                <img src={cert.image} alt={`${cert.title} certificate`} />
+                {cert.pdf ? (
+                  <iframe
+                    src={`${getPdf(cert.pdf)}#toolbar=0&navpanes=0&view=FitH`}
+                    title={`${cert.title} certificate`}
+                    className={styles.preview}
+                  />
+                ) : (
+                  <img
+                    src={getFile(cert.image)}
+                    alt={`${cert.title} certificate`}
+                    className={styles.preview}
+                  />
+                )}
                 <h3>{cert.title}</h3>
                 <p className={styles.issuer}>
                   {cert.issuer} · {cert.year}

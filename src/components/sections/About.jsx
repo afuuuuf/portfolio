@@ -4,7 +4,7 @@ import { workExperience } from "../../data/work-experience";
 import styles from "./About.module.css";
 import TechIcons from "../common/TechIcons";
 import TechIcon from "../common/TechIcon";
-import photo from "../../assets/images/afif.jpg";
+import { getImages } from "../../utils/file";
 
 const PHOTO_SIZE = 44;
 
@@ -19,7 +19,7 @@ const logos = Object.fromEntries(
 );
 
 export default function About() {
-  const { shortName, about } = profileData;
+  const { shortName, image, about } = profileData;
 
   const rowsRef = useRef(null);
   const fillRef = useRef(null);
@@ -141,7 +141,7 @@ export default function About() {
             </div>
             <div className={styles.spinePhoto} ref={photoRef}>
               <div className={styles.spinePhotoInner}>
-                <img src={photo} alt="" />
+                <img src={getImages(image)} alt="" />
               </div>
             </div>
           </div>

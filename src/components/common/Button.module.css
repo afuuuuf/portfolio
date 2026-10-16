@@ -1,21 +1,30 @@
 .button {
   display: inline-block;
   padding: 0.6rem 1.25rem;
-  border-radius: 0.5rem;
   font-weight: 600;
   text-decoration: none;
   border: 2px solid var(--accent);
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  clip-path: polygon(
+    12px 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%,
+    0 12px
+  );
 }
 
 .solid {
   background-color: var(--accent);
   color: #fff;
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
 .solid:hover {
   opacity: 0.9;
+  box-shadow: 0 0 24px var(--accent);
 }
 
 .outline {
@@ -26,4 +35,5 @@
 .outline:hover {
   background-color: var(--accent);
   color: #fff;
+  box-shadow: 0 0 20px var(--accent);
 }
