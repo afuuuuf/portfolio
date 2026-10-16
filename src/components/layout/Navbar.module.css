@@ -8,8 +8,9 @@
   width: 100%;
   margin: 0 auto;
   padding: 1rem 2rem;
-  background: rgba(15, 23, 42, 0.9);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: blur(8px);
+  border-bottom: 1px solid color-mix(in srgb, var(--highlight) 30%, transparent);
 }
 
 .logo {

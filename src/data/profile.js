@@ -1,6 +1,7 @@
 export const profileData = {
   name: "Wan Afif Najmuddin bin Wan Mohd Syukri",
   shortName: "Wan Afif",
+  image: "about/afif-3.jpeg",
   role: "Full Stack Engineer",
   tagline: "I build clean, fast, and accessible web applications.",
   location: "Selangor, Malaysia",

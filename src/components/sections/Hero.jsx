@@ -1,13 +1,14 @@
 import { profileData } from "../../data/profile";
 import { Link } from "react-router-dom";
-import photo from "../../assets/images/afif.jpg";
 import Button from "../common/Button";
 import styles from "./Hero.module.css";
 import SocialIcons from "../common/SocialIcons";
 import Clock from "../common/Clock";
+import { getImages } from "../../utils/file";
 
 export default function Hero() {
-  const { name, role, tagline, socialLinks, location, timeZone } = profileData;
+  const { name, image, role, tagline, socialLinks, location, timeZone } =
+    profileData;
 
   return (
     <section id="home" className={`container ${styles.hero}`}>
@@ -18,7 +19,7 @@ export default function Hero() {
         <p>{tagline}</p>
 
         <div className={styles.showcase}>
-          <Link to="/work" className={styles.showcaseWork}>
+          <Link to="/about" className={styles.showcaseWork}>
             View My Work
             <SocialIcons name="rightArrow" />
           </Link>
@@ -47,7 +48,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <img src={photo} alt={`${name}'s portrait`} className={styles.photo} />
+      <img
+        src={getImages(image)}
+        alt={`${name}'s portrait`}
+        className={styles.photo}
+      />
     </section>
   );
 }

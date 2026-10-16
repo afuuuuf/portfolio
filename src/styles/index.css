@@ -1,9 +1,37 @@
+/* ============================================================
+   CYBERPUNK THEME
+   To switch palette, change the values below. Both palettes are
+   documented so you can flip in one block:
+   - Palette 1 (Neon Night / Blade Runner): bg #0A0A12, surface
+     #14141F, primary #FF2A6D, secondary #05D9E8, highlight #F9F871
+   - Palette 2 (Synthwave Purple): bg #0D0221, surface #1A0B3B,
+     primary #B967FF, secondary #FF71CE, highlight #01CDFE
+   ============================================================ */
 :root {
-  --bg: #1d0225;
-  --surface: #1e293b;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --accent: #d8acff;
+  /* --- Palette 2: Synthwave Purple (currently active) --- */
+  --bg: #0d0221;
+  --surface: #1a0b3b;
+  --surface-2: #251250;
+  --primary: #b967ff; /* violet */
+  --secondary: #ff71ce; /* pink */
+  --highlight: #01cdfe; /* cyan - small highlights only */
+  --text: #e8e1ff;
+  --muted: #9d8fc8;
+  --border: rgba(255, 255, 255, 0.14);
+
+  /* --- Palette 1: Neon Night (swap these in to use instead) --- */
+  /* --bg: #0a0a12;
+     --surface: #14141f;
+     --surface-2: #1c1c2a;
+     --primary: #ff2a6d;
+     --secondary: #05d9e8;
+     --highlight: #f9f871;
+     --text: #d1f7ff;
+     --muted: #8a9bb5;
+     --border: rgba(255, 255, 255, 0.12); */
+
+  /* legacy alias so existing components keep working */
+  --accent: var(--primary);
 }
 
 * {
@@ -17,14 +45,67 @@ html {
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: "JetBrains Mono", "Share Tech Mono", monospace;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Cyberpunk perspective grid on the background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    radial-gradient(circle at 50% -10%, rgba(1, 205, 254, 0.14), transparent 55%),
+    linear-gradient(transparent 4px, rgba(185, 103, 255, 0.06) 4px),
+    linear-gradient(90deg, transparent 4px, rgba(185, 103, 255, 0.06) 4px);
+  background-size:
+    100% 100%,
+    48px 48px,
+    48px 48px;
+}
+
+/* Scanline overlay at low opacity */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.05;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    #000 2px 4px
+  );
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 5rem 1.5rem;
+}
+
+/* Headings default to a cyberpunk display font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Orbitron", "Archivo", sans-serif;
+}
+
+/* Glowing accents */
+a {
+  color: var(--secondary);
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--bg);
 }
