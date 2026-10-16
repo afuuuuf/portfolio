@@ -4,7 +4,7 @@ import Button from "../common/Button";
 import styles from "./Hero.module.css";
 import SocialIcons from "../common/SocialIcons";
 import Clock from "../common/Clock";
-import { getImages } from "../../utils/file";
+import { getImages, getPdf } from "../../utils/file";
 
 export default function Hero() {
   const { name, image, role, tagline, socialLinks, location, timeZone } =
@@ -23,7 +23,7 @@ export default function Hero() {
             View My Work
             <SocialIcons name="rightArrow" />
           </Link>
-          <Button href={socialLinks.resume} download>
+          <Button href={getPdf(socialLinks.resume)} download>
             <SocialIcons name="download" />
             Resume
           </Button>

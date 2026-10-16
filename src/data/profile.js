@@ -21,6 +21,6 @@ export const profileData = {
     github: "https://github.com/afuuuuf",
     linkedin: "https://www.linkedin.com/in/wan-afif/",
     email: "mailto:wnafif02@gmail.com",
-    resume: "/Resume_WanAfifNajmuddin.pdf",
+    resume: "Resume_WanAfifNajmuddin.pdf",
   },
 };
