@@ -1,50 +1,14 @@
 import { useState } from "react";
-import { FaJava, FaCss3Alt, FaReact } from "react-icons/fa6";
-import {
-  SiPython,
-  SiJavascript,
-  SiMongodb,
-  SiGit,
-  SiDocker,
-  SiFastapi,
-  SiDbeaver,
-  SiPostman,
-  SiCplusplus,
-} from "react-icons/si";
-import {
-  BiLogoSpringBoot,
-  BiLogoPostgresql,
-  BiLogoHtml5,
-} from "react-icons/bi";
 import { profileData } from "../../data/profile";
+import TechIcon from "./TechIcon";
 import styles from "./TechIcons.module.css";
 
 const { techStack } = profileData;
 
-const icons = {
-  Java: FaJava,
-  Python: SiPython,
-  JavaScript: SiJavascript,
-  "C++": SiCplusplus,
-  HTML: BiLogoHtml5,
-  CSS: FaCss3Alt,
-  "React.js": FaReact,
-  MongoDB: SiMongodb,
-  Git: SiGit,
-  Docker: SiDocker,
-  SpringBoot: BiLogoSpringBoot,
-  FastAPI: SiFastapi,
-  PostgreSQL: BiLogoPostgresql,
-  DBeaver: SiDbeaver,
-  Postman: SiPostman,
-};
-
 function Pill({ skill }) {
-  const Icon = icons[skill];
-
   return (
     <span className={styles.pill}>
-      {Icon ? <Icon aria-hidden="true" /> : null}
+      <TechIcon name={skill} />
       {skill}
     </span>
   );
