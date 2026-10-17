@@ -8,16 +8,6 @@ import { getImages } from "../../utils/file";
 
 const PHOTO_SIZE = 44;
 
-const logoFiles = import.meta.glob("../../assets/logos/*", {
-  eager: true,
-  query: "?url",
-  import: "default",
-});
-
-const logos = Object.fromEntries(
-  Object.entries(logoFiles).map(([path, url]) => [path.split("/").pop(), url]),
-);
-
 export default function About() {
   const { shortName, image, about } = profileData;
 
@@ -100,9 +90,9 @@ export default function About() {
                 </time>
                 <p className={styles.duration}>{job.duration}</p>
                 <div className={styles.company}>
-                  {logos[job.logo] && (
+                  {job.logo && (
                     <img
-                      src={logos[job.logo]}
+                      src={getImages(job.logo)}
                       alt={`${job.company} logo`}
                       className={styles.logo}
                     />

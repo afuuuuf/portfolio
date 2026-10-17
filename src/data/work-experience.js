@@ -1,7 +1,7 @@
 export const workExperience = [
   {
     company: "Paynet",
-    logo: "paynet-logo.png",
+    logo: "logos/paynet-logo.png",
     position: "Backend Engineer",
     date_start: "Oct 2025",
     date_end: "Sept 2026",
