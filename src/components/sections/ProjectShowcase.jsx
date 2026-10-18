@@ -36,19 +36,11 @@ export default function ProjectShowcase() {
           <Carousel>
             {certsData.map((cert) => (
               <article key={cert.title} className={styles.card}>
-                {cert.pdf ? (
-                  <iframe
-                    src={`${getPdf(cert.pdf)}#toolbar=0&navpanes=0&view=FitH`}
-                    title={`${cert.title} certificate`}
-                    className={styles.preview}
-                  />
-                ) : (
-                  <img
-                    src={getFile(cert.image)}
-                    alt={`${cert.title} certificate`}
-                    className={styles.preview}
-                  />
-                )}
+                <iframe
+                  src={`${getPdf(cert.pdf)}#toolbar=0&navpanes=0&view=FitH`}
+                  title={`${cert.title} certificate`}
+                  className={styles.preview}
+                />
                 <h3>{cert.title}</h3>
                 <p className={styles.issuer}>
                   {cert.issuer} · {cert.year}
