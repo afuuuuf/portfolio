@@ -1,16 +1,82 @@
-# React + Vite
+# Wan Afif · Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visual, "Synthwave Purple"-themed Full Stack Engineer portfolio (Home, About, Projects,
+Contact) built with **React 19 + Vite**. Live at
+**[wan-afif.netlify.app](https://wan-afif.netlify.app/)**.
 
-Currently, two official plugins are available:
+![Preview](docs/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **"Synthwave Purple" cyberpunk theme** — Orbitron + JetBrains Mono fonts, perspective
+  grid & scanline overlays, glow, cut-corner buttons, and an RGB-split glitch on the hero
+  name, all gated behind `prefers-reduced-motion`
+- **Data-driven content** — profile, projects, certifications, and work experience all live
+  in `src/data/`, so site text is edited without touching component code
+- **Projects showcase** carousel (react-slick)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React 19** + **Vite 8** (CSS Modules per component; global theme in `src/styles/index.css`)
+- **react-router-dom** for client-side routing
+- **react-icons**, **react-slick** + **slick-carousel**
+- **ESLint** (`eslint-plugin-react-hooks`, `eslint-plugin-react-refresh`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+```bash
+# Clone
+git clone https://github.com/afuuuuf/portfolio.git
+cd portfolio
+
+# Install dependencies (Node 20.19+ or 22.12+, as required by Vite 8)
+npm install
+
+# Start the dev server (opens the browser)
+npm run dev
+
+# Lint
+npm run lint
+
+# Production build → /dist
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── common/    Button, Carousel, Clock, SocialIcons, TechIcons
+│   ├── layout/    Navbar, Footer
+│   └── sections/  Hero, About, Contact, ProjectShowcase
+├── data/          profile, projects, certs, work experience (edit content here)
+├── pages/         Home, About, Project, Contact
+├── styles/        global theme & palette
+└── utils/         file, time helpers
+```
+
+## Theming
+
+The site ships with two cyberpunk palettes defined side-by-side in
+`src/styles/index.css` `:root` — the active one on top, the alternative commented out.
+Component styles use the palette CSS variables, so switching themes is a one-block edit.
+The currently active palette is **Synthwave Purple** (`#0D0221` bg, `#B967FF` primary,
+`#FF71CE` pink, `#01CDFE` cyan).
+
+## Deploy & SPA Routing
+
+Deployed to **Netlify as a static site** from the `main` branch. Production build output is
+`dist/`. SPA routing is handled via `public/_redirects`.
+
+## License
+
+Code is MIT-licensed (see [LICENSE](LICENSE)); content, text, and images are © Wan Afif and
+not for reuse.
+
+## Author
+
+**Wan Afif Najmuddin bin Wan Mohd Syukri** · Full Stack Engineer
