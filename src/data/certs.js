@@ -27,4 +27,11 @@ export const certsData = [
     pdf: "certs/JavaScript Certificate Wan Afif.pdf",
     link: "",
   },
+  {
+    title: "Basic SQL Certificate",
+    issuer: "HackerRank",
+    year: "2026",
+    pdf: "certs/SQL Basic Certificate Wan Afif.pdf",
+    link: "",
+  },
 ];
